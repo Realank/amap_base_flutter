@@ -26,6 +26,7 @@
         _latitude = location.coordinate.latitude;
         _longitude = location.coordinate.longitude;
         _speed = location.speed;
+        _course = location.course;
 
         if (error) {
             _errorCode = error.code;

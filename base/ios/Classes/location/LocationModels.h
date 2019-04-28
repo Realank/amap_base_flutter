@@ -47,6 +47,7 @@
 @property(nonatomic) NSString *street;
 @property(nonatomic) NSString *streetNum;
 @property(nonatomic) NSInteger trustedLevel;
+@property(nonatomic, assign) CLLocationDirection course;
 
 @end
 

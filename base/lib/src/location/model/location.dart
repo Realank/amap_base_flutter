@@ -33,6 +33,7 @@ class Location {
   String street;
   String streetNum;
   num trustedLevel;
+  num course;
 
   Location({
     this.accuracy,
@@ -67,6 +68,7 @@ class Location {
     this.street,
     this.streetNum,
     this.trustedLevel,
+    this.course,
   });
 
   Location.fromJson(Map<String, dynamic> json) {
@@ -104,6 +106,7 @@ class Location {
     street = json['street'] as String;
     streetNum = json['streetNum'] as String;
     trustedLevel = json['trustedLevel'] as int;
+    course = json['course'] as num;
   }
 
   Map<String, dynamic> toJson() {
@@ -142,6 +145,7 @@ class Location {
     data['street'] = this.street;
     data['streetNum'] = this.streetNum;
     data['trustedLevel'] = this.trustedLevel;
+    data['course'] = this.course;
     return data;
   }
 
@@ -178,6 +182,7 @@ class Location {
     String street,
     String streetNum,
     num trustedLevel,
+    num course,
   }) {
     return Location(
       accuracy: accuracy ?? this.accuracy,
@@ -201,8 +206,7 @@ class Location {
       isOffset: isOffset ?? this.isOffset,
       latitude: latitude ?? this.latitude,
       locationDetail: locationDetail ?? this.locationDetail,
-      locationQualityReport:
-          locationQualityReport ?? this.locationQualityReport,
+      locationQualityReport: locationQualityReport ?? this.locationQualityReport,
       locationType: locationType ?? this.locationType,
       longitude: longitude ?? this.longitude,
       poiName: poiName ?? this.poiName,
@@ -213,6 +217,7 @@ class Location {
       street: street ?? this.street,
       streetNum: streetNum ?? this.streetNum,
       trustedLevel: trustedLevel ?? this.trustedLevel,
+      course: course ?? this.course,
     );
   }
 
@@ -252,7 +257,8 @@ class Location {
           speed == other.speed &&
           street == other.street &&
           streetNum == other.streetNum &&
-          trustedLevel == other.trustedLevel;
+          trustedLevel == other.trustedLevel &&
+          course == other.course;
 
   @override
   int get hashCode =>
@@ -287,7 +293,8 @@ class Location {
       speed.hashCode ^
       street.hashCode ^
       streetNum.hashCode ^
-      trustedLevel.hashCode;
+      trustedLevel.hashCode ^
+      course.hashCode;
 
   @override
   String toString() {
